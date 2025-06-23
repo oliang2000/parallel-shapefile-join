@@ -50,4 +50,8 @@ The core algorithm uses:
 
 ## Results
 
+The speedup plot shows minimal speedup when processing the small file, as most runtime is dominated by GeoJSON reading and CSV writing overhead. According to Amdahl’s Law, the sequential portions limit parallel gains here. In contrast, the large file exhibits significant, near-linear speedup with more threads, since most of its runtime is spent on the parallelizable centroid-to-geometry search.
 
+For the large dataset, the main bottleneck remains data loading, reduction, and output writing—accounting for about 3 seconds of the total 60-second runtime in sequential runs. Future improvements could parallelize these stages, for example by spawning worker threads early and overlapping data reading with computation to reduce sequential overhead and boost scalability.
+
+![Speedup Plot](benchmark/speedup_plot.png)
