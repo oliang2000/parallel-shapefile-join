@@ -24,7 +24,7 @@ The core algorithm uses:
 - **Parallelization** through multithreaded workers
 - A **work-stealing** strategy to balance load dynamically
 
-## 🗃️ Repository Structure
+## Repository Structure
 
 ```text
 .
@@ -46,3 +46,8 @@ The core algorithm uses:
 │   ├── sequential.go
 │   ├── parbasic.go
 │   └── parsteal.go
+```
+
+## Results
+
+
